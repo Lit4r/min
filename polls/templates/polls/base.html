@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css
+/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css
+/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/polls.css' %}">
+    </head>
+    <body>
+        <div class="menu">
+            {% if user.is_superuser %}
+            <a href="{% url 'reg' %}"><button>Регистрация</button></a>
+            {% endif %}
+            <a href="{% url 'courses' %}"><button>Курсы</button></a>
+            {% if user.is_superuser %}
+            <a href="{% url 'new' %}"><button>Добавить</button></a>
+            {% endif %}
+        </div>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<div class="new">
+<h2>Новая лекция</h2> 
+{% csrf_token %}
+{{ form.as_p}}
+<button class="save btn btn-default">Сохранить</button>
+</div>
+{% endblock %}

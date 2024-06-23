@@ -1,0 +1,10 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+{% for lecture in lectures%}
+<div id="sidebar" class="det">
+   <a href="{% url 'lecture_detail' pk=lecture.pk %}"><h1>{{lecture.title}}</h1>
+   </a>
+</div>
+{% endfor %}
+{% endblock %}

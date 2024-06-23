@@ -1,0 +1,15 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <body class="bod">
+        <p>Выберите курс:</p>
+        {% for course in courses %}
+        <div class="cour">
+            <a href="{% url 'course_detail' pk=course.pk %}"><h1>{{course.title}}</h1>
+            </a>
+        </div>
+        {% endfor %}
+    </body>
+{% endblock %}
+</html>
